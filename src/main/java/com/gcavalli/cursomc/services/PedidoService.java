@@ -62,8 +62,10 @@ public class PedidoService {
 			produto = produtoService.find(ip.getProduto().getId());
 			ip.setPreco(produto.getPreco());
 			ip.setPedido(obj);
+			ip.setProduto(produto);
 		}
 		itemPedidoRepository.saveAll(obj.getItens());
+		System.out.println(obj);
 		return obj;
 	}
 }
