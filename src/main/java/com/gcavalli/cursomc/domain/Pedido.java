@@ -20,8 +20,6 @@ import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import org.hibernate.validator.cfg.defs.CurrencyDef;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
