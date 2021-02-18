@@ -8,6 +8,7 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort.Direction;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -25,7 +26,7 @@ import com.gcavalli.cursomc.services.exceptions.ObjectNotFoundException;
 
 @Service
 public class ClienteService {
-
+	
 	@Autowired
 	ClienteRepository repo;
 
@@ -34,6 +35,9 @@ public class ClienteService {
 	
 	@Autowired
 	CidadeRepository cidadeRepository;
+	
+	@Autowired
+	BCryptPasswordEncoder passwordEncoder;
 
 	public Cliente find(Integer id) {
 		Optional<Cliente> obj = repo.findById(id);
@@ -70,13 +74,13 @@ public class ClienteService {
 	}
 
 	public Cliente fromDto(ClienteDTO objDto) {
-		Cliente obj = new Cliente(objDto.getId(), objDto.getNome(), objDto.getEmail(), null, null);
+		Cliente obj = new Cliente(objDto.getId(), objDto.getNome(), objDto.getEmail(), null, null, null);
 		return obj;
 	}
 
 	public Cliente fromDto(ClienteNewDTO objDto) {
 		Cliente obj = new Cliente(null, objDto.getNome(), objDto.getEmail(), objDto.getCpfOuCnpj(),
-				TipoCliente.toEnum(objDto.getTipo()));
+				TipoCliente.toEnum(objDto.getTipo()), passwordEncoder.encode(objDto.getSenha()));
 		
 		obj.getTelefones().add(objDto.getTelefone1());
 		if (objDto.getTelefone2() != null)
