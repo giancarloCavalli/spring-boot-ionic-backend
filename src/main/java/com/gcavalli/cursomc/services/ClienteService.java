@@ -44,6 +44,10 @@ public class ClienteService {
 		return obj.orElseThrow(() -> new ObjectNotFoundException(
 				"Objeto não encontrado! Id: " + id + ", Tipo: " + Cliente.class.getName()));
 	}
+	
+	public Cliente findByEmail(String email) {
+		return repo.findByEmail(email);
+	}
 
 	@Transactional
 	public Cliente insert(Cliente obj) {
