@@ -20,9 +20,9 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		Cliente cli = clienteService.findByEmail(email);
 		
 		if (cli == null)
-			throw new UsernameNotFoundException(email);
+			throw new UsernameNotFoundException("Email \"" + email + "\" inválido");
 		
-		return new UserSS(cli.getId(), cli.getSenha(), cli.getSenha(), cli.getPerfis()); 
+		return new UserSS(cli.getId(), cli.getEmail(), cli.getSenha(), cli.getPerfis()); 
 	}
 
 }

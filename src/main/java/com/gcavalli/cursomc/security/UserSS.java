@@ -19,7 +19,6 @@ public class UserSS implements UserDetails {
 	private Collection<? extends GrantedAuthority> authorities;
 	
 	public UserSS() {
-		super();
 	}
 	
 	public UserSS(Integer id, String email, String senha, Set<Perfil> perfis) {
@@ -68,5 +67,8 @@ public class UserSS implements UserDetails {
 	public boolean isEnabled() {
 		return true;
 	}
-
+	
+	public boolean hasRole(Perfil perfil) {
+		return getAuthorities().contains(new SimpleGrantedAuthority(perfil.getDescricao()));
+	}
 }
