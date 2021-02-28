@@ -117,7 +117,7 @@ private BCryptPasswordEncoder passwordEncoder;
 		Cliente cli1 = new Cliente(null, "Maria Silva", "gcavalli.cursos@gmail.com", "36378912377", TipoCliente.PESSOAFISICA, passwordEncoder.encode("123"));
 		cli1.getTelefones().addAll(Arrays.asList("27363323", "93838393"));
 
-		Cliente cli2 = new Cliente(null, "Elon Stark", "gcavalli@furb.com.br", "97302543038", TipoCliente.PESSOAFISICA, passwordEncoder.encode("321"));
+		Cliente cli2 = new Cliente(null, "Elon Stark", "gcavalli@furb.br", "97302543038", TipoCliente.PESSOAFISICA, passwordEncoder.encode("321"));
 		cli2.getTelefones().addAll(Arrays.asList("32569987", "999655665"));
 		cli2.addPerfil(Perfil.ADMIN);
 
