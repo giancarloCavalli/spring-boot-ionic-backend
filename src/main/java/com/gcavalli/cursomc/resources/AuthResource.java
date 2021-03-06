@@ -32,6 +32,7 @@ public class AuthResource {
 		UserSS user = UserService.authenticated();
 		String token = jwtUtil.generateToken(user.getUsername());
 		response.addHeader("Authorization", "Bearer " + token);
+		response.addHeader("access-control-expose-headers", "Authorization"); //liberação de acesso a requisições externas referente ao CORS
 		return ResponseEntity.noContent().build();
 	}
 	
