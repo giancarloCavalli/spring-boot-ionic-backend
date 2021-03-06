@@ -1,10 +1,12 @@
 package com.gcavalli.cursomc.services;
 
+import java.awt.image.BufferedImage;
 import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -33,20 +35,26 @@ import com.gcavalli.cursomc.services.exceptions.ObjectNotFoundException;
 public class ClienteService {
 	
 	@Autowired
-	ClienteRepository repo;
+	private ClienteRepository repo;
 
 	@Autowired
-	EnderecoRepository enderecoRepository;
+	private EnderecoRepository enderecoRepository;
 	
 	@Autowired
-	CidadeRepository cidadeRepository;
+	private CidadeRepository cidadeRepository;
 	
 	@Autowired
-	BCryptPasswordEncoder passwordEncoder;
+	private BCryptPasswordEncoder passwordEncoder;
 	
 	@Autowired
-	S3Service s3Service;
-
+	private S3Service s3Service;
+	
+	@Autowired
+	private ImageService imageService;
+	
+	@Value("${img.prefix.client.profile}")
+	private String imgNamePrefix;
+	
 	public Cliente find(Integer id) {
 		
 		UserSS user = UserService.authenticated();
@@ -126,14 +134,9 @@ public class ClienteService {
 		UserSS user = UserService.authenticated();
 		if (user == null)
 			throw new AuthorizationException("Acesso negado");
-		
-		URI uri = s3Service.uploadFile(multipartFile);
-		
-		Cliente cli = repo.findByEmail(user.getUsername());
-		cli.setImageUrl(uri.toString());
-		repo.save(cli);
-		
-		return uri;
+		BufferedImage jpgImage = imageService.getJpgImageFromFile(multipartFile);
+		String fileName = imgNamePrefix + user.getId() + ".jpg";
+		return s3Service.uploadFile(imageService.getInputStream(jpgImage, "jpg"), fileName, "image/jpeg");
 	}
 
 }
