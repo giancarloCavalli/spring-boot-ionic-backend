@@ -43,8 +43,8 @@ public class ClienteService {
 	@Autowired
 	private CidadeRepository cidadeRepository;
 	
-	@Autowired
-	private BCryptPasswordEncoder passwordEncoder;
+//	@Autowired
+//	private BCryptPasswordEncoder passwordEncoder;
 	
 	@Autowired
 	private S3Service s3Service;
@@ -119,6 +119,7 @@ public class ClienteService {
 	}
 
 	public Cliente fromDto(ClienteNewDTO objDto) {
+		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 		Cliente obj = new Cliente(null, objDto.getNome(), objDto.getEmail(), objDto.getCpfOuCnpj(),
 				TipoCliente.toEnum(objDto.getTipo()), passwordEncoder.encode(objDto.getSenha()));
 		
