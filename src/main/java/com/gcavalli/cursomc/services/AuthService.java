@@ -29,7 +29,7 @@ public class AuthService {
 	private Random random = new Random();
 
 	public void sendNewPassword(String email) {
-		Cliente cliente = clienteService.findByEmail(email);
+		Cliente cliente = clienteService.findByEmailNoAuthRequired(email);
 		if (cliente == null)
 			throw new ObjectNotFoundException("Email " + email + " não encontrado");
 

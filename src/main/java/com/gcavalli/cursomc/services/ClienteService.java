@@ -70,6 +70,18 @@ public class ClienteService {
 	}
 	
 	public Cliente findByEmail(String email) {
+		UserSS user = UserService.authenticated();
+		if (user == null || !user.hasRole(Perfil.ADMIN) && !email.equals(user.getUsername()))
+			throw new AuthorizationException("Acesso negado");
+		Cliente obj;
+		obj = repo.findByEmail(email);
+		if (obj == null)
+			throw new ObjectNotFoundException("Objeto não encontrado");
+		
+		return obj;
+	}
+	
+	public Cliente findByEmailNoAuthRequired(String email) {
 		return repo.findByEmail(email);
 	}
 
