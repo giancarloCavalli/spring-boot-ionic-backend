@@ -36,9 +36,9 @@ Online shopping is a full stack application that works as an e-commerce. It was 
 - Ionic
 - HTML / CSS / JS / TypeScript
 - Bootstrap
-## Implantação em produção
+## Production
 - Back end: Heroku
-- Banco de dados: MySQL
+- Database: MySQL
 
 # How to run the app
 
