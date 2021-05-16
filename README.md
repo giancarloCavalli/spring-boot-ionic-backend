@@ -5,7 +5,10 @@
 Online shopping is a full stack application that works as an e-commerce. It was built during the course named "Spring Boot, Hibernate, REST, Ionic, JWT, S3, MySQL, MongoDB" from Udemy. Thanks to professor [Nelio Alves](https://github.com/acenelio), his didactics are amazing.
 
 # Menu
+- [Features](#features)
+- [Architecture](#architecture)
 - [Stack](#stack)
+- [App demonstration](#app-demonstration)
 
 ## Features
 - User signup
@@ -16,8 +19,6 @@ Online shopping is a full stack application that works as an e-commerce. It was 
 - Image/photo upload to Amazon S3
 - Automated email sending
 - Infinite scroll
-
-![Signup Page](https://github.com/giancarloCavalli/Assets/blob/master/spring-boot-ionic/SignupPage.gif) 
 
 ## Architecture
 ![conceptual_model](https://github.com/giancarloCavalli/Assets/blob/master/spring-boot-ionic/diagrama.png)
@@ -57,6 +58,16 @@ cd spring-boot-ionic-backend
 # run project using maven
 ./mvnw spring-boot:run
 ```
+
+# App demonstration
+## Signup page
+![Signup page](https://github.com/giancarloCavalli/Assets/blob/master/spring-boot-ionic/SignupPage.gif)
+## Shopping pages
+![Shopping pages](https://github.com/giancarloCavalli/Assets/blob/master/spring-boot-ionic/Shopping%20e%20CartPage.gif)
+## Profile & Photo upload to Amazon S3 bucket
+![Profile photo upload](https://github.com/giancarloCavalli/Assets/blob/master/spring-boot-ionic/Profile-%20Photo%20upload.gif)
+## Order conclusion
+![Order conclusion](https://github.com/giancarloCavalli/Assets/blob/master/spring-boot-ionic/Order%20conclusion.gif)
 
 # Autor
 
