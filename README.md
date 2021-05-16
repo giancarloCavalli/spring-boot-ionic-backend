@@ -5,12 +5,12 @@
 Online shopping is a full stack application that works as an e-commerce. It was built during the course named "Spring Boot, Hibernate, REST, Ionic, JWT, S3, MySQL, MongoDB" from Udemy. Thanks to professor [Nelio Alves](https://github.com/acenelio), his didactics are amazing.
 
 # Menu
-- [Features](#features)
-- [Architecture](#architecture)
-- [Stack](#stack)
-- [How to run the app](#how-to-run-the-app)
-- [App demonstration](#app-demonstration)
-- [Author](#author)
+- [Features](#features-)
+- [Architecture](#architecture-)
+- [Stack](#stack-)
+- [How to run the app](#how-to-run-the-app-)
+- [App demonstration](#app-demonstration-)
+- [Author](#author-)
 
 ## Features [🔝](#online-shopping)
 - User signup
