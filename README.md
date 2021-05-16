@@ -10,6 +10,7 @@ Online shopping is a full stack application that works as an e-commerce. It was 
 - [Stack](#stack)
 - [How to run the app](#how-to-run-the-app)
 - [App demonstration](#app-demonstration)
+- [Author](#author)
 
 ## Features [🔝](#online-shopping)
 - User signup
@@ -21,12 +22,12 @@ Online shopping is a full stack application that works as an e-commerce. It was 
 - Automated email sending
 - Infinite scroll
 
-## Architecture
+## Architecture [🔝](#online-shopping)
 ![conceptual_model](https://github.com/giancarloCavalli/Assets/blob/master/spring-boot-ionic/diagrama.png)
 
 ![architecture](https://github.com/giancarloCavalli/Assets/blob/master/spring-boot-ionic/Arquitetura%20em%20camadas.png)
 
-# Stack
+# Stack [🔝](#online-shopping)
 ## Back end
 - Java 11
 - Amazon S3
@@ -44,7 +45,7 @@ Online shopping is a full stack application that works as an e-commerce. It was 
 - HTML / CSS / JS / TypeScript
 - Bootstrap
 
-# How to run the app
+# How to run the app [🔝](#online-shopping)
 
 ## Back end
 Prerequisits: Java 11
@@ -60,7 +61,7 @@ cd spring-boot-ionic-backend
 ./mvnw spring-boot:run
 ```
 
-# App demonstration
+# App demonstration [🔝](#online-shopping)
 ## Signup page
 ![Signup page](https://github.com/giancarloCavalli/Assets/blob/master/spring-boot-ionic/SignupPage.gif)
 ## Shopping pages
@@ -70,7 +71,7 @@ cd spring-boot-ionic-backend
 ## Order conclusion
 ![Order conclusion](https://github.com/giancarloCavalli/Assets/blob/master/spring-boot-ionic/Order%20conclusion.gif)
 
-# Autor
+# Author [🔝](#online-shopping)
 
 Giancarlo Cavalli
 
