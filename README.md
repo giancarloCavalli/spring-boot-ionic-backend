@@ -4,6 +4,9 @@
 ## About the project
 Online shopping is a full stack application that works as an e-commerce. It was built during the course named "Spring Boot, Hibernate, REST, Ionic, JWT, S3, MySQL, MongoDB" from Udemy. Thanks to professor [Nelio Alves](https://github.com/acenelio), his didactics are amazing.
 
+# Menu
+- [Stack](#stack)
+
 ## Features
 - User signup
 - User login
@@ -13,6 +16,8 @@ Online shopping is a full stack application that works as an e-commerce. It was 
 - Image/photo upload to Amazon S3
 - Automated email sending
 - Infinite scroll
+
+![Signup Page](https://github.com/giancarloCavalli/Assets/blob/master/spring-boot-ionic/SignupPage.gif) 
 
 ## Architecture
 ![conceptual_model](https://github.com/giancarloCavalli/Assets/blob/master/spring-boot-ionic/diagrama.png)
@@ -36,14 +41,11 @@ Online shopping is a full stack application that works as an e-commerce. It was 
 - Ionic
 - HTML / CSS / JS / TypeScript
 - Bootstrap
-## Production
-- Back end: Heroku
-- Database: MySQL
 
 # How to run the app
 
 ## Back end
-Prerequirements: Java 11
+Prerequisits: Java 11
 
 ```bash
 # clone repository
