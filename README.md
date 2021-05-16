@@ -62,7 +62,7 @@ default.sender=<your_email_sender>
 default.recipient=
 ```
 
-<h4 text-color="yellow">If you fork this repo, be cautious to not commit changes with your amazon AWS private information!</h4>
+<h4>:heavy_exclamation_mark: If you fork this repo, be cautious to not commit changes with your amazon AWS private information :heavy_exclamation_mark:</h4>
 
 ```
 jwt.secret=<secret_caracters_on_token_generation>
@@ -84,22 +84,30 @@ ps: If you use a gmail account, you gotta set a configuration that allow the app
 
 <h3>application-test.properties</h3>
 You can leave it this way or change the "testdb" to another database name.
+
+```
 spring.datasource.url=jdbc:h2:mem:testdb
 spring.datasource.username=sa
 spring.datasource.password=
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.format_sql=true
+```
 
 <h3>application-dev.properties</h3>
+
+```
 spring.datasource.url=jdbc:mysql://localhost:3306/curso_spring
 spring.datasource.username=root
 spring.datasource.password=
 spring.jpa.hibernate.ddl-auto=create
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.format_sql=true
+```
 
-if you fork this repo, be cautious to not commit changes with your email private information!
-It is preconfigured to use gmail, you just need to set your username(email) and password.
+<h4>:heavy_exclamation_mark: If you fork this repo, be cautious to not commit changes with your email private information :heavy_exclamation_mark:</h4>
+It is preconfigured with gmail setup, you just need to set your username(email) and password.
+
+```
 spring.mail.host=smtp.gmail.com
 spring.mail.username=
 spring.mail.password=
@@ -109,9 +117,10 @@ spring.mail.properties.mail.smtp.socketFactory.class = javax.net.ssl.SSLSocketFa
 spring.mail.properties.mail.smtp.socketFactory.fallback = false
 spring.mail.properties.mail.smtp.starttls.enable = true
 spring.mail.properties.mail.smtp.ssl.enable = true
+```
 
 ## Back end
-Prerequisits: Java 11
+Prerequisits: Java 11, MySQL
 
 ```bash
 # clone repository
