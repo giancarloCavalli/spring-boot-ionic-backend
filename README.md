@@ -12,7 +12,7 @@ Online shopping is a full stack application that works as an e-commerce. It was 
 - [App demonstration](#app-demonstration-)
 - [Author](#author-)
 
-## Features [🔝](#online-shopping)
+# Features [🔝](#online-shopping)
 - User signup
 - User login
 - Shopping cart
@@ -22,7 +22,7 @@ Online shopping is a full stack application that works as an e-commerce. It was 
 - Automated email sending
 - Infinite scroll
 
-## Architecture [🔝](#online-shopping)
+# Architecture [🔝](#online-shopping)
 ![conceptual_model](https://github.com/giancarloCavalli/Assets/blob/master/spring-boot-ionic/diagrama.png)
 
 ![architecture](https://github.com/giancarloCavalli/Assets/blob/master/spring-boot-ionic/Arquitetura%20em%20camadas.png)
@@ -46,6 +46,69 @@ Online shopping is a full stack application that works as an e-commerce. It was 
 - Bootstrap
 
 # How to run the app [🔝](#online-shopping)
+
+## Config
+<h3>application.properties</h3>
+You can switch between "test" and "dev" environment by changing the value as shown below <br>
+
+`spring.profiles.active=test` <br>
+- test: uses mockemail service, so it doesn't use smtp email services. It uses H2 database (doesn't require any database installation) <br>
+- dev: uses smtp email service, so it requires the config related to email service. It requires database instalation (in this project it is configured to use MySQL)
+
+```
+spring.jpa.open-in-view=false
+
+default.sender=<your_email_sender>
+default.recipient=
+```
+
+<h4 text-color="yellow">If you fork this repo, be cautious to not commit changes with your amazon AWS private information!</h4>
+
+```
+jwt.secret=<secret_caracters_on_token_generation>
+jwt.expiration=<expiration_time_in_milliseconds>
+
+aws.access_key_id=<access_key>
+aws.secret_access_key=<secret_access>
+s3.bucket=<amazon_S3_bucket_name>
+s3.region=<s3_region>
+
+img.prefix.client.profile=<prefix_to_the_profile_pictures>
+img.profile.size=200
+
+spring.servlet.multipart.max-file-size=10MB
+spring.servlet.multipart.max-request-size=10MB
+```
+
+ps: If you use a gmail account, you gotta set a configuration that allow the app access to it. You can do it following [this steps](https://hotter.io/docs/email-accounts/secure-app-gmail/)
+
+<h3>application-test.properties</h3>
+You can leave it this way or change the "testdb" to another database name.
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.username=sa
+spring.datasource.password=
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+
+<h3>application-dev.properties</h3>
+spring.datasource.url=jdbc:mysql://localhost:3306/curso_spring
+spring.datasource.username=root
+spring.datasource.password=
+spring.jpa.hibernate.ddl-auto=create
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+
+if you fork this repo, be cautious to not commit changes with your email private information!
+It is preconfigured to use gmail, you just need to set your username(email) and password.
+spring.mail.host=smtp.gmail.com
+spring.mail.username=
+spring.mail.password=
+spring.mail.properties.mail.smtp.auth = true
+spring.mail.properties.mail.smtp.socketFactory.port = 465
+spring.mail.properties.mail.smtp.socketFactory.class = javax.net.ssl.SSLSocketFactory
+spring.mail.properties.mail.smtp.socketFactory.fallback = false
+spring.mail.properties.mail.smtp.starttls.enable = true
+spring.mail.properties.mail.smtp.ssl.enable = true
 
 ## Back end
 Prerequisits: Java 11
