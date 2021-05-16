@@ -18,6 +18,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.gcavalli.cursomc.domain.enums.Perfil;
 import com.gcavalli.cursomc.domain.enums.TipoCliente;
 
@@ -37,10 +38,11 @@ public class Cliente implements Serializable {
 	@JsonIgnore
 	private String senha;
 	
-	@OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
+	@JsonManagedReference
+	@OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<Endereco> enderecos = new ArrayList<>();
 	
-	@ElementCollection
+	@ElementCollection(fetch = FetchType.EAGER)
 	@CollectionTable(name = "TELEFONE")
 	private Set<String> telefones = new HashSet<>();
 	

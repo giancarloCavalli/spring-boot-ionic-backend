@@ -33,4 +33,4 @@ build/
 .vscode/
 
 ### Outros ###
-src/main/resources/application-dev.properties
+my_properties_files/
