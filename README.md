@@ -8,14 +8,15 @@ Online shopping is a full stack application that works as an e-commerce. It was 
 - [Features](#features)
 - [Architecture](#architecture)
 - [Stack](#stack)
+- [How to run the app](#how-to-run-the-app)
 - [App demonstration](#app-demonstration)
 
-## Features
+## Features [🔝](#online-shopping)
 - User signup
 - User login
 - Shopping cart
 - Shopping pages
-- Photo capturing using PCs camera
+- Photo capturing using camera
 - Image/photo upload to Amazon S3
 - Automated email sending
 - Infinite scroll
